@@ -1,18 +1,26 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import ProductsList from "./pages/ProductsList";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <MainLayout />,
     errorElement: <div className="text-center py-20">Global Error Boundary!</div>,
     children: [
-      {
+{
         index: true,
+        element: <Navigate to="/login" replace />, 
+      },
+      {
+        path: "login",
+        element: <Login />
+      },
+      {
+        path: "products",
         element: <ProductsList />,
       },
       {
@@ -22,10 +30,6 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
-      },
-      {
-        path: "login",
-        element: <Login />
       },
       {
         path: "*",

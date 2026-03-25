@@ -54,12 +54,12 @@ export default function MainLayout() {
         
       </nav>
 
-      {/* Page Content */}
+   
       <main className="flex-1 container pt-24 pb-8 px-4">
         <Outlet />
       </main>
 
-      {/* Footer */}
+
       <footer className="border-t bg-muted/50">
         <div className="container px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
