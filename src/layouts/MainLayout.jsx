@@ -22,11 +22,11 @@ export default function MainLayout() {
        dir={language === "ar" ? "rtl" : "ltr"}>
       <nav className="fixed top-0 w-full border-b bg-background/95 backdrop-blur z-50">
         <div className="container flex h-16 items-center px-4">
-          <div className="mr-4 text-sm font-bold text-primary">
+          <div className="hidden md:block mr-4 text-sm font-bold text-primary">
             {content[language].welcome}
           </div>
-          <div className="mr-8 font-bold text-xl text-foreground">MY-STORE</div>
-          <div className="flex gap-6 text-sm font-medium">
+          <div className="mr-4 sm:mr-8 font-bold text-lg sm:text-xl text-foreground whitespace-nowrap">MY-STORE</div>
+          <div className="flex gap-3 sm:gap-6 text-xs sm:text-sm font-medium">
             <Link to="/" className="transition-colors text-foreground/80 hover:text-foreground">{content[language].home}</Link>
             <Link to="/cart" className="transition-colors text-foreground/80 hover:text-foreground">{content[language].cart} {totalItems > 0 && `(${totalItems})`}</Link>
             <Link to="/login" className="transition-colors text-foreground/80 hover:text-foreground">Login</Link>
